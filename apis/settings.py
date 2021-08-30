@@ -13,7 +13,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-from apis.MY_SETTINGS import MY_SECRET
+from apis.MY_SETTINGS import MY_SECRET, MY_DATABASES
+
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -46,6 +48,7 @@ PROJECT_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+
 
 ]
 
@@ -85,12 +88,7 @@ WSGI_APPLICATION = 'apis.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+DATABASES = MY_DATABASES
 
 
 # Password validation
